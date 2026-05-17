@@ -125,6 +125,32 @@ public class Fecha
     public String toString(){
         return dia + "/" + mes + "/" + anho;
     }
+    
+    /**
+     * compara si 2 fechas representan el mismo dia mes y año
+     */
+    public boolean equals(Fecha otraFecha){
+        if(dia == otraFecha.obtenerDia() && mes == otraFecha.obtenerMes() && anho == otraFecha.obtenerAño()){
+          return true;
+        } else {
+          return false;
+        }
+    }
+    
+    /**
+     * compara si 2 fechas representan el mismo dia mes y año
+     */
+    public boolean esAnterior(Fecha otraFecha){
+        if(anho < otraFecha.obtenerAño()){
+        return true;
+        } else if(anho == otraFecha.obtenerAño() && mes < otraFecha.obtenerMes()){
+          return true;
+         } else if (anho == otraFecha.obtenerAño() && mes == otraFecha.obtenerMes() && dia < otraFecha.obtenerDia()){
+            return true;
+         } else {
+        return false;
+    }
+    }
 }
             
     
